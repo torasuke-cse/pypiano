@@ -5,7 +5,7 @@ from pygame.locals import *
 import sys
 
 SCREEN_SIZE = (600, 400)
-IMAGE_FILE = "731A9867.JPG"
+IMAGE_FILE = "./resources/731A9867.JPG"
 WINDOW_TITLE = "PyPiano"
 
 def main():

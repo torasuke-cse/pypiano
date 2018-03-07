@@ -15,9 +15,10 @@ __license__   = 'The 2-Clause BSD License'
 
 
 import pygame
-from pygame.locals import *
+from   pygame.locals import QUIT
 import pygame.midi
 import sys
+import xml.etree.ElementTree
 
 class PyPiano(object):
 
@@ -75,10 +76,21 @@ class PyPiano(object):
         pygame.quit()
 
 
+def readXmlForTest():
+    tree = xml.etree.ElementTree.parse("./xml/properties.xml")
+    print(str(tree))
+    print("-----")
+    for element in tree.findall(".//property"):
+        print(str(element.get("name") + " -> " + element.get("value")))
+    print("-----")
+    return 0
+
+
 def main():
     """ Main routine """
-    instance = PyPiano()
-    return_code = instance.perform()
+    #instance = PyPiano()
+    #return_code = instance.perform()
+    return_code = readXmlForTest()
     return return_code
 
 

@@ -1,49 +1,88 @@
+#!/usr/bin/env python
 # -*- coding:utf-8 -*-
+
+"""
+PyPiano!
+This application makes you to be easy to read musical scores rapidly.
+"""
+
+__author__    = 'MIYAZAKI Masafumi (The Project Fukurous)'
+__date__      = '2018/03/07'
+__version__   = '0.1.0'
+
+__copyright__ = "Copyright 2017-2018 MIYAZAKI Masafumi (The Project Fukurous)"
+__license__   = 'The 2-Clause BSD License'
+
+
 import pygame
-import pygame.midi
 from pygame.locals import *
+import pygame.midi
 import sys
 
-SCREEN_SIZE = (600, 400)
-IMAGE_FILE = "./resources/731A9867.JPG"
-WINDOW_TITLE = "PyPiano"
+class PyPiano(object):
+
+    def __init__(self):
+        self.WINDOW_TITLE = "PyPiano"
+        self.SCREEN_SIZE = (600, 400)
+        self.COLOR_BLACK = (0, 0, 0)
+        self.EXIT_SUCCESS = 0
+        self.device_id = None
+        self.midi_device = None
+        self.screen = None
+
+    def perform(self):
+        self.initialize()
+        self.select_device()
+        self.select_suite()
+        self.execute_suite()
+        self.finalize()
+        return self.EXIT_SUCCESS
+
+    def initialize(self):
+        pygame.init()
+        pygame.midi.init()
+        pygame.fastevent.init()
+        self.screen = pygame.display.set_mode(self.SCREEN_SIZE)
+        pygame.display.set_caption(self.WINDOW_TITLE)
+        self.screen.fill(self.COLOR_BLACK)
+        #image = pygame.image.load(IMAGE_FILE).convert()
+        #screen.blit(image, (0, 0))
+        pygame.display.update()
+
+    def select_device(self):
+        print("Count of MIDI devices: " + str(pygame.midi.get_count()))
+        self.device_id = int(input("Choose device_id: "))
+        print("MIDI Device: " + str(pygame.midi.get_device_info(self.device_id)))
+        self.midi_device = pygame.midi.Input(self.device_id)
+        input("Press any key to continue...")
+
+    def select_suite(self):
+        pass
+
+    def execute_suite(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == QUIT:   # Exit on press Quit button.
+                    return
+            if self.midi_device.poll():
+                for event in self.midi_device.read(1):
+                    print("MIDI read: " + str(event))
+            pygame.time.wait(20)
+
+    def finalize(self):
+        self.midi_device.close()
+        pygame.midi.quit()
+        pygame.quit()
+
 
 def main():
-    pygame.init()                                     # Pygameの初期化
-    pygame.midi.init()                                # Pygame.midiの初期化
-    pygame.fastevent.init()                           # Pygame.fasteventの初期化
-
-    print("Count of MIDI devices: " + str(pygame.midi.get_count()))
-    device_id = int(input("Choose device_id: "))
-    print(pygame.midi.get_device_info(device_id))
-    midi_device = pygame.midi.Input(device_id)
-    print("MIDI Device: " + str(midi_device))
-    input("Press any key to continue...")
-
-    screen = pygame.display.set_mode(SCREEN_SIZE)     # 画面生成
-    image = pygame.image.load(IMAGE_FILE).convert()   # 画像読み込み
-    pygame.display.set_caption(WINDOW_TITLE)          # タイトルバーに表示する文字
-
-    screen.fill((0,0,0))         # 画面を黒色(#000000)に塗りつぶし
-    screen.blit(image, (0, 0))   # 画像表示
-    pygame.display.update()      # 画面を更新
-    pygame.time.delay(500)
-
-    while True:
-
-        #if pygame.event.poll() != pygame.NOEVENT:
-        for event in pygame.event.get():
-            if event.type == QUIT:   # 閉じるボタンが押されたら終了
-                pygame.quit()        # Pygameの終了(画面閉じられる)
-                sys.exit()
-        if midi_device.poll():
-            print("MIDI poll")
-            for event in midi_device.read(1):
-                print("MIDI read: " + str(event))
-        pygame.time.wait(20)
+    """ Main routine """
+    instance = PyPiano()
+    return_code = instance.perform()
+    return return_code
 
 
 if __name__ == "__main__":
-    main()
-
+    return_code = main()
+    sys.exit(return_code)
 

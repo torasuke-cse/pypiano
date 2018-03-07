@@ -76,13 +76,27 @@ class PyPiano(object):
         pygame.quit()
 
 
+class Properties(object):
+
+    def __init__(self, xml_filename):
+        from pprint import pprint
+        self.tree = xml.etree.ElementTree.parse(xml_filename)
+        self.dictionary = dict()
+        for element in self.tree.findall(".//property"):
+            self.dictionary[element.get("name")] = element.get("value")
+        #pprint(self.dictionary)
+
+    def get(self, key):
+        return self.dictionary[key]
+
+    def set(self, key, value):
+        self.dictionary[key] = value
+
+
 def readXmlForTest():
-    tree = xml.etree.ElementTree.parse("./xml/properties.xml")
-    print(str(tree))
-    print("-----")
-    for element in tree.findall(".//property"):
-        print(str(element.get("name") + " -> " + element.get("value")))
-    print("-----")
+    #properties = Properties("./xml/properties.xml")
+    #print(properties.get("KeyImage_CM"))
+
     return 0
 
 

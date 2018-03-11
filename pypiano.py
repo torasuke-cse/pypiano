@@ -14,6 +14,7 @@ __copyright__ = "Copyright 2017-2018 MIYAZAKI Masafumi (The Project Fukurous)"
 __license__   = 'The 2-Clause BSD License'
 
 
+import org.fukurous.utils.filesystem
 import pygame
 from   pygame.locals import QUIT
 import pygame.midi
@@ -21,6 +22,10 @@ import sys
 import xml.etree.ElementTree
 
 class PyPiano(object):
+
+    FILE_FOR_PROPERTIES = "./xml/properties.xml"
+    DIRECTORY_FOR_CASES = "./cases"
+    DIRECTORY_FOR_SUITES = "./suites"
 
     def __init__(self):
         self.WINDOW_TITLE = "PyPiano"
@@ -79,23 +84,118 @@ class PyPiano(object):
 class Properties(object):
 
     def __init__(self, xml_filename):
-        from pprint import pprint
         self.tree = xml.etree.ElementTree.parse(xml_filename)
         self.dictionary = dict()
         for element in self.tree.findall(".//property"):
-            self.dictionary[element.get("name")] = element.get("value")
-        #pprint(self.dictionary)
+            self.dictionary[element.get("key")] = element.get("value")
 
-    def get(self, key):
+    def getByKey(self, key):
         return self.dictionary[key]
 
-    def set(self, key, value):
+    def setByKey(self, key, value):
         self.dictionary[key] = value
 
 
+class PracticeSuites(object):
+
+    def __init__(self, directory):
+        self.suites = dict()
+
+    def getById(self, id_name):
+        return self.suites[id_name]
+
+
+class PracticeSuite(object):
+
+    def __init__(self, xml_filename):
+        self.dictionary = dict()
+        self.tree = xml.etree.ElementTree.parse(xml_filename)
+        self.id = self.tree.getroot().get("id")
+        for element in self.tree.findall(".//case"):
+            pass   ################ not yet
+
+
+class PracticeCases(object):
+
+    def __init__(self, directory):
+        self.cases = dict()
+        for xml_file in org.fukurous.utils.filesystem.filelist_recursive(directory):
+            xml_filename = str(xml_file)
+            self.tree = xml.etree.ElementTree.parse(xml_filename)
+            for case in self.tree.findall(".//case"):
+                type_name = case.get("type")
+                if type_name == "score":
+                    id_name = case.get("id")
+                    key = case.find("./score").get("key")
+                    notes = list()
+                    for note in case.findall("./notes/note"):
+                        notes.append(Note(note.get("name")))
+                    self.cases[id_name] = PracticeCaseAsScore(id_name, key, notes)
+                elif type_name == "chord":
+                    pass   ##### TODO #####
+                elif type_name == "sound":
+                    pass   ##### TODO #####
+                else:
+                    pass   # Unexpected case. Nothing to do....
+
+    def getById(self, id_name):
+        return self.cases[id_name]
+
+
+class PracticeCase(object):
+
+    def __init__(self, id_name, notes):
+        self.id = id_name
+        self.notes = notes
+
+    def getId(self):
+        return self.id
+
+    def getNotes(self):
+        return self.notes
+
+
+class PracticeCaseAsScore(PracticeCase):
+
+    def __init__(self, id_name, key, notes):
+        super().__init__(id_name, notes)
+        self.key = key
+
+    def getKey(self):
+        return self.key
+
+
+class PracticeCaseAsChord(PracticeCase):
+
+    def __init__(self, id_name, chord, notes):
+        super.__init__(id_name, notes)
+        self.chord = chord
+
+    def getChord(self):
+        return self.chord
+
+
+class PracticeCaseAsSound(PracticeCase):
+
+    def __init__(self, id_name, notes):
+        super.__init__(id_name, notes)
+
+
+class Note(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+
+
 def readXmlForTest():
-    #properties = Properties("./xml/properties.xml")
-    #print(properties.get("KeyImage_CM"))
+    #properties = Properties(PyPiano.FILE_FOR_PROPERTIES)
+    #print(properties.getByKey("KeyImage_CM"))
+
+    #cases = PracticeCases(PyPiano.DIRECTORY_FOR_CASES)
+    #print(cases.getById("Score_CM_C7").getNotes()[0].getName())
 
     return 0
 

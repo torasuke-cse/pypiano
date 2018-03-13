@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <properties>
-  <property key="NoteImage" value="./iamges/note.png" />
+  <property key="DirectoryForCases" value="./cases" />
+  <property key="DirectoryForSuites" value="./suites" />
+  <property key="WindowTitle" value="PyPiano" />
+  <property key="WindowWidth" value="1000" />
+  <property key="WindowHeight" value="800" />
+  <property key="DisplayScale" value="0.3" />
+  <property key="IntervalTime" value="1500" />
+  <property key="NoteImage" value="./images/note.png" />
+  <property key="NoteImageAsAnswer" value="./images/note_as_answer.png" />
   <property key="HeadImage" value="./images/head.png" />
-  <property key="LineWidth" value="200" />
+  <property key="LineWidth" value="400" />
+  <property key="NoteOffsetX" value="200" />
+  <property key="AnswerColor" value="(0,255,255)" />
   <property key="LineImage_Base" value="./images/lines_base.png" />
   <property key="LineImage_Upper_Top5th" value="./images/lines_upper_top5th.png" />
   <property key="LineImage_Upper_Top4th" value="./images/lines_upper_top4th.png" />
@@ -33,4 +43,47 @@
   <property key="KeyImage_FsM" value="./images/key_FsM.png" />
   <property key="KeyImage_GfM" value="./images/key_GfM.png" />
   <property key="KeyImage_GM"  value="./images/key_GM.png" />
+  <property key="NotePositionY_C1" value="1054" />
+  <property key="NotePositionY_D1" value="1030" />
+  <property key="NotePositionY_E1" value="1006" />
+  <property key="NotePositionY_F1" value="982" />
+  <property key="NotePositionY_G1" value="958" />
+  <property key="NotePositionY_A1" value="934" />
+  <property key="NotePositionY_B1" value="910" />
+  <property key="NotePositionY_C2" value="886" />
+  <property key="NotePositionY_D2" value="862" />
+  <property key="NotePositionY_E2" value="838" />
+  <property key="NotePositionY_F2" value="814" />
+  <property key="NotePositionY_G2" value="790" />
+  <property key="NotePositionY_A2" value="766" />
+  <property key="NotePositionY_B2" value="742" />
+  <property key="NotePositionY_C3" value="718" />
+  <property key="NotePositionY_D3" value="694" />
+  <property key="NotePositionY_E3" value="670" />
+  <property key="NotePositionY_F3" value="646" />
+  <property key="NotePositionY_G3" value="622" />
+  <property key="NotePositionY_A3" value="598" />
+  <property key="NotePositionY_B3" value="574" />
+  <property key="NotePositionY_C4" value="550" />
+  <property key="NotePositionY_D4" value="526" />
+  <property key="NotePositionY_E4" value="502" />
+  <property key="NotePositionY_F4" value="478" />
+  <property key="NotePositionY_G4" value="454" />
+  <property key="NotePositionY_A4" value="430" />
+  <property key="NotePositionY_B4" value="406" />
+  <property key="NotePositionY_C5" value="382" />
+  <property key="NotePositionY_D5" value="358" />
+  <property key="NotePositionY_E5" value="334" />
+  <property key="NotePositionY_F5" value="310" />
+  <property key="NotePositionY_G5" value="286" />
+  <property key="NotePositionY_A5" value="262" />
+  <property key="NotePositionY_B5" value="238" />
+  <property key="NotePositionY_C6" value="214" />
+  <property key="NotePositionY_D6" value="190" />
+  <property key="NotePositionY_E6" value="166" />
+  <property key="NotePositionY_F6" value="142" />
+  <property key="NotePositionY_G6" value="118" />
+  <property key="NotePositionY_A6" value="94" />
+  <property key="NotePositionY_B6" value="70" />
+  <property key="NotePositionY_C7" value="46" />
 </properties>

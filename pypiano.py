@@ -105,12 +105,12 @@ class PyPiano(object):
         whole_height = max(head_image.get_height(), key_image.get_height(), lines_image.get_height())
         self.canvas = pygame.Surface((whole_width, whole_height))
         self.canvas.fill(self.COLOR_WHITE)
-        head_position_x = 0
-        key_position_x = head_position_x + head_image.get_width()
-        lines_position_x = key_position_x + key_image.get_width()
+        head_position_x  = 0
+        key_position_x   = head_position_x  + head_image.get_width()
+        lines_position_x = key_position_x   + key_image.get_width()
         notes_position_x = lines_position_x + int(self.props.get("NoteOffsetX"))
-        self.canvas.blit(head_image, (head_position_x, 0))
-        self.canvas.blit(key_image, (key_position_x, 0))
+        self.canvas.blit(head_image,  (head_position_x,  0))
+        self.canvas.blit(key_image,   (key_position_x,   0))
         self.canvas.blit(lines_image, (lines_position_x, 0))
         self.canvas.blit(notes_image, (notes_position_x, 0))
 

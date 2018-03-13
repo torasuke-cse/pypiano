@@ -12,7 +12,6 @@
   <property key="HeadImage" value="./images/head.png" />
   <property key="LineWidth" value="400" />
   <property key="NoteOffsetX" value="200" />
-  <property key="AnswerColor" value="(0,255,255)" />
   <property key="LineImage_Base" value="./images/lines_base.png" />
   <property key="LineImage_Upper_Top5th" value="./images/lines_upper_top5th.png" />
   <property key="LineImage_Upper_Top4th" value="./images/lines_upper_top4th.png" />

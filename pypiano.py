@@ -7,20 +7,24 @@ This application makes you to be easy to read musical scores rapidly.
 """
 
 __author__    = 'MIYAZAKI Masafumi (The Project Fukurous)'
-__date__      = '2018/03/13'
-__version__   = '0.1.1'
+__date__      = '2018/03/14'
+__version__   = '0.1.2'
 
 __copyright__ = "Copyright 2017-2018 MIYAZAKI Masafumi (The Project Fukurous)"
 __license__   = 'The 2-Clause BSD License'
 
 
+import datetime
 import org.fukurous.utils.filesystem
 import pygame
 from   pygame.locals import QUIT
 import pygame.midi
 import pygame.transform
+import random
+import re
 import sys
 import xml.etree.ElementTree
+
 
 class PyPiano(object):
 
@@ -38,9 +42,11 @@ class PyPiano(object):
         self.canvas = None   # Surface for drawing
         self.screen = None   # Surface for displaying
         self.practice_cases = PracticeCases(self.props.get("DirectoryForCases"))
+        self.practice_suites = PracticeSuites(self.props.get("DirectoryForSuites"))
         self.previous_case = None
         self.current_case = None
         self.notes_image_height = 1500
+        self.pressing_keys = list()
 
     def perform(self):
         self.initialize()
@@ -69,19 +75,22 @@ class PyPiano(object):
         input("Press any key to continue...")
 
     def select_suite(self):
-        pass   ##### TODO #####
+        self.current_suite = self.practice_suites.get_by_id("Score_CM")   ##### TODO #####
 
     def execute_suite(self):
         while True:
             self.select_case()
             self.display_case()
+            self.write_pre_answer_log()
             self.wait_answer()
+            self.write_post_answer_log()
             self.display_answer()
-            pygame.time.wait(self.props.get("IntervalTime"))
+            self.wait_interval()
 
     def select_case(self):
         self.previous_case = self.current_case
-        self.current_case = self.practice_cases.getById("Score_CM_C5")   ##### TODO ##### This is a sample!
+        current_case_id = self.current_suite.choose_one_id()
+        self.current_case = self.practice_cases.get_by_id(current_case_id)
 
     def display_case(self):
         self.screen.fill(self.COLOR_WHITE)
@@ -118,7 +127,7 @@ class PyPiano(object):
         return self.get_image(self.props.get("HeadImage"))
 
     def get_key_image(self):
-        return self.get_image(self.props.get("KeyImage_" + self.current_case.getKey()))
+        return self.get_image(self.props.get("KeyImage_" + self.current_case.get_key()))
 
     def get_lines_image(self):
         ##### TODO ##### This is a sample!
@@ -134,8 +143,8 @@ class PyPiano(object):
             note_image = self.get_image(self.props.get("NoteImage"))
         notes_image = pygame.Surface((note_image.get_width(), self.notes_image_height)).convert_alpha()
         notes_image.fill(self.COLOR_TRANSPARENCY)
-        for note in self.current_case.getNotes():
-            note_name = note.getName()
+        for note in self.current_case.get_notes():
+            note_name = note.get_position_name()
             note_y = int(self.props.get("NotePositionY_" + note_name))
             if (note_y + note_image.get_height()) > self.notes_image_height:
                 self.notes_image_height = note_y + note_image.get_height()
@@ -162,16 +171,32 @@ class PyPiano(object):
         self.screen.blit(scaled_canvas, (start_x, start_y))
 
     def wait_answer(self):
+        answer_dictionary = self.create_answer_dictionary()
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT:   # Exit on press Quit button.
                     return
-                    #### TODO #####
+                    ##### TODO #####
             if self.midi_device.poll():
                 for event in self.midi_device.read(10):
-                    print("MIDI read: " + str(event))
-                    #### TODO #####
+                    self.write_info_log("MIDI event got : " + str(event))
+                    midi_event = MidiEvent(event)
+                    note_number_string = str(midi_event.get_data1())
+                    if note_number_string in answer_dictionary:
+                        if midi_event.is_note_on():
+                            answer_dictionary[note_number_string] = True
+                        elif midi_event.is_note_off():
+                            answer_dictionary[note_number_string] = False
+                if list(answer_dictionary.values()).count(True) == len(answer_dictionary):
+                    return
             pygame.time.wait(20)
+
+    def create_answer_dictionary(self):
+        dictionary = dict()
+        for note in self.current_case.get_notes():
+            note_number_string = self.props.get("NoteNumber_" + note.get_name())
+            dictionary[note_number_string] = False
+        return dictionary
 
     def display_answer(self):
         self.screen.fill(self.COLOR_WHITE)
@@ -196,6 +221,23 @@ class PyPiano(object):
     def draw_answer_as_sound(self):
         pass   ##### TODO #####
 
+    def wait_interval(self):
+        pygame.event.pump()
+        pygame.time.wait(int(self.props.get("IntervalTime")))
+
+    def write_pre_answer_log(self):
+        self.write_info_log_with_action("displayed")
+
+    def write_post_answer_log(self):
+        self.write_info_log_with_action("answered")
+
+    def write_info_log_with_action(self, action):
+        self.write_info_log("Case(" + self.current_case.get_id() + ") in Suite(" + self.current_suite.get_id() + ") is " + action + ".")
+
+    def write_info_log(self, message):
+        timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
+        print("[Info][" + timestamp + "] " + message)
+
     def finalize(self):
         self.midi_device.close()
         pygame.midi.quit()
@@ -210,36 +252,57 @@ class Properties(object):
         for element in self.tree.findall(".//property"):
             self.dictionary[element.get("key")] = element.get("value")
 
-    def getByKey(self, key):
+    def get_by_key(self, key):
         return self.dictionary[key]
 
-    def setByKey(self, key, value):
+    def set_by_key(self, key, value):
         self.dictionary[key] = value
 
     def get(self, key):
-        return self.getByKey(key)
+        return self.get_by_key(key)
 
     def set(self, key, value):
-        self.setByKey(key, value)
+        self.set_by_key(key, value)
 
 
 class PracticeSuites(object):
 
     def __init__(self, directory):
         self.suites = dict()
+        for xml_file in org.fukurous.utils.filesystem.filelist_recursive(directory):
+            xml_filename = str(xml_file)
+            self.tree = xml.etree.ElementTree.parse(xml_filename)
+            for suite_node in self.tree.findall(".//suite"):
+                self.suites[suite_node.get("id")] = PracticeSuite(suite_node)
 
-    def getById(self, id_name):
+    def get_by_id(self, id_name):
         return self.suites[id_name]
 
 
 class PracticeSuite(object):
 
-    def __init__(self, xml_filename):
+    def __init__(self, suite_node):
         self.dictionary = dict()
-        self.tree = xml.etree.ElementTree.parse(xml_filename)
-        self.id = self.tree.getroot().get("id")
-        for element in self.tree.findall(".//case"):
-            pass   ##### TODO #####
+        self.total_rate = 0
+        self.id = suite_node.get("id")
+        for element in suite_node.findall(".//case"):
+            rate = int(element.get("rate"))
+            self.dictionary[element.get("id")] = rate
+        for key in self.dictionary.keys():
+            self.total_rate = self.total_rate + self.dictionary[key]
+
+    def get_id(self):
+        return self.id
+
+    def choose_one_id(self):
+        random_number = random.randint(1, self.total_rate)
+        threshold = 0
+        for key in self.dictionary.keys():
+            threshold = threshold + self.dictionary[key]
+            if threshold >= random_number:
+                break
+        chosen_id = key
+        return chosen_id
 
 
 class PracticeCases(object):
@@ -265,7 +328,7 @@ class PracticeCases(object):
                 else:
                     pass   # Unexpected case. Nothing to do....
 
-    def getById(self, id_name):
+    def get_by_id(self, id_name):
         return self.cases[id_name]
 
 
@@ -275,10 +338,10 @@ class PracticeCase(object):
         self.id = id_name
         self.notes = notes
 
-    def getId(self):
+    def get_id(self):
         return self.id
 
-    def getNotes(self):
+    def get_notes(self):
         return self.notes
 
 
@@ -288,7 +351,7 @@ class PracticeCaseAsScore(PracticeCase):
         super().__init__(id_name, notes)
         self.key = key
 
-    def getKey(self):
+    def get_key(self):
         return self.key
 
 
@@ -298,7 +361,7 @@ class PracticeCaseAsChord(PracticeCase):
         super.__init__(id_name, notes)
         self.chord = chord
 
-    def getChord(self):
+    def get_chord(self):
         return self.chord
 
 
@@ -313,18 +376,37 @@ class Note(object):
     def __init__(self, name):
         self.name = name
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
+    def get_position_name(self):
+        return re.sub("^(.).?(.)$", r"\1\2", self.name)
 
-def readXmlForTest():
-    #properties = Properties(PyPiano.FILE_FOR_PROPERTIES)
-    #print(properties.get("KeyImage_CM"))
+class MidiEvent(object):
 
-    #cases = PracticeCases(PyPiano.DIRECTORY_FOR_CASES)
-    #print(cases.getById("Score_CM_C7").getNotes()[0].getName())
+    def __init__(self, event):
+        self.raw_event = event
 
-    return 0
+    def get_status(self):
+        return self.raw_event[0][0]
+
+    def get_data1(self):
+        return self.raw_event[0][1]
+
+    def get_data2(self):
+        return self.raw_event[0][2]
+
+    def get_data3(self):
+        return self.raw_event[0][3]
+
+    def get_timestamp(self):
+        return self.raw_event[1]
+
+    def is_note_on(self):
+        return (self.raw_event != None) and (self.get_status() == 0x90)
+
+    def is_note_off(self):
+        return (self.raw_event != None) and (self.get_status() == 0x80)
 
 
 def main():

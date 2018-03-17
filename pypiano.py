@@ -63,8 +63,6 @@ class PyPiano(object):
         self.screen = pygame.display.set_mode(self.SCREEN_SIZE)
         pygame.display.set_caption(self.WINDOW_TITLE)
         self.screen.fill(self.COLOR_WHITE)
-        #image = pygame.image.load(IMAGE_FILE).convert()
-        #screen.blit(image, (0, 0))
         pygame.display.update()
 
     def select_device(self):
@@ -91,6 +89,7 @@ class PyPiano(object):
         self.previous_case = self.current_case
         current_case_id = self.current_suite.choose_one_id()
         self.current_case = self.practice_cases.get_by_id(current_case_id)
+        print(">>> " + current_case_id)
 
     def display_case(self):
         self.screen.fill(self.COLOR_WHITE)
@@ -130,11 +129,86 @@ class PyPiano(object):
         return self.get_image(self.props.get("KeyImage_" + self.current_case.get_key()))
 
     def get_lines_image(self):
-        ##### TODO ##### This is a sample!
         base_image = self.get_image(self.props.get("LineImage_Base"))
         scaled_width = int(self.props.get("LineWidth"))
         scaled_height = base_image.get_height()
-        return pygame.transform.scale(base_image, (scaled_width, scaled_height))
+        scaled_image = pygame.transform.scale(base_image, (scaled_width, scaled_height))
+        additional_lines_image = self.get_additional_lines_image()
+        if additional_lines_image is not None:
+            additional_lines_offset_x = int(self.props.get("AdditionalLinesOffsetX"))
+            scaled_image.blit(additional_lines_image, (additional_lines_offset_x, 0))
+        return scaled_image
+
+    def get_additional_lines_image(self):
+        additional_line_images = self.get_additional_line_images()
+        if len(additional_line_images) == 0:
+            return None
+        base_image = additional_line_images.pop()
+        for additional_line_image in additional_line_images:
+            base_image.blit(additional_line_image, (0, 0))
+        scaled_width = int(self.props.get("AdditionalLinesWidth"))
+        scaled_height = base_image.get_height()
+        scaled_image = pygame.transform.scale(base_image, (scaled_width, scaled_height))
+        return scaled_image
+
+    def get_additional_line_images(self):
+        dictionary = dict()
+        for note in self.current_case.get_notes():
+            note_name = note.get_position_name()
+            note_step = note.get_step()
+            if note_step:
+                note_y = int(self.props.get("NotePositionY_" + note_name + "_" + note_step))
+            else:
+                note_y = int(self.props.get("NotePositionY_" + note_name))
+            if note_y <= int(self.props.get("NotePositionY_B6")):
+                self.add_line_image_into_dictionary("LineImage_Upper_Top5th", dictionary)
+            if note_y <= int(self.props.get("NotePositionY_G6")):
+                self.add_line_image_into_dictionary("LineImage_Upper_Top4th", dictionary)
+            if note_y <= int(self.props.get("NotePositionY_E6")):
+                self.add_line_image_into_dictionary("LineImage_Upper_Top3rd", dictionary)
+            if note_y <= int(self.props.get("NotePositionY_C6")):
+                self.add_line_image_into_dictionary("LineImage_Upper_Top2nd", dictionary)
+            if note_y <= int(self.props.get("NotePositionY_A5")):
+                self.add_line_image_into_dictionary("LineImage_Upper_Top1st", dictionary)
+            if (note.step is None and
+                note_y >= int(self.props.get("NotePositionY_C4_Upper")) and
+                note_y <= int(self.props.get("NotePositionY_G3_Upper"))):
+                self.add_line_image_into_dictionary("LineImage_Upper_Bottom1st", dictionary)
+            if (note.step is None and
+                note_y >= int(self.props.get("NotePositionY_A3_Upper")) and
+                note_y <= int(self.props.get("NotePositionY_G3_Upper"))):
+                self.add_line_image_into_dictionary("LineImage_Upper_Bottom2st", dictionary)
+            if (note.step == "Upper" and
+                note_y >= int(self.props.get("NotePositionY_C4_Upper")) and
+                note_y <= int(self.props.get("NotePositionY_G3_Upper"))):
+                self.add_line_image_into_dictionary("LineImage_Upper_Bottom1st", dictionary)
+            if (note.step == "Upper" and
+                note_y >= int(self.props.get("NotePositionY_A3_Upper")) and
+                note_y <= int(self.props.get("NotePositionY_G3_Upper"))):
+                self.add_line_image_into_dictionary("LineImage_Upper_Bottom2nd", dictionary)
+            if (note.step == "Lower" and
+                note_y >= int(self.props.get("NotePositionY_F4_Lower")) and
+                note_y <= int(self.props.get("NotePositionY_E4_Lower"))):
+                self.add_line_image_into_dictionary("LineImage_Lower_Top2nd", dictionary)
+            if (note.step == "Lower" and
+                note_y >= int(self.props.get("NotePositionY_F4_Lower")) and
+                note_y <= int(self.props.get("NotePositionY_C4_Lower"))):
+                self.add_line_image_into_dictionary("LineImage_Lower_Top1st", dictionary)
+            if note_y >= int(self.props.get("NotePositionY_E2")):
+                self.add_line_image_into_dictionary("LineImage_Lower_Bottom1st", dictionary)
+            if note_y >= int(self.props.get("NotePositionY_C2")):
+                self.add_line_image_into_dictionary("LineImage_Lower_Bottom2nd", dictionary)
+            if note_y >= int(self.props.get("NotePositionY_A1")):
+                self.add_line_image_into_dictionary("LineImage_Lower_Bottom3rd", dictionary)
+            if note_y >= int(self.props.get("NotePositionY_F1")):
+                self.add_line_image_into_dictionary("LineImage_Lower_Bottom4th", dictionary)
+            if note_y >= int(self.props.get("NotePositionY_D1")):
+                self.add_line_image_into_dictionary("LineImage_Lower_Bottom5th", dictionary)
+        return list(dictionary.values())
+
+    def add_line_image_into_dictionary(self, key, dictionary):
+        if key not in dictionary.keys():
+            dictionary[key] = self.get_image(self.props.get(key))
 
     def get_notes_image(self, is_as_answer = None):
         if is_as_answer:
@@ -145,7 +219,11 @@ class PyPiano(object):
         notes_image.fill(self.COLOR_TRANSPARENCY)
         for note in self.current_case.get_notes():
             note_name = note.get_position_name()
-            note_y = int(self.props.get("NotePositionY_" + note_name))
+            note_step = note.get_step()
+            if note_step:
+                note_y = int(self.props.get("NotePositionY_" + note_name + "_" + note_step))
+            else:
+                note_y = int(self.props.get("NotePositionY_" + note_name))
             if (note_y + note_image.get_height()) > self.notes_image_height:
                 self.notes_image_height = note_y + note_image.get_height()
                 notes_image = pygame.Surface((note_image.get_width(), self.notes_image_height)).convert_alpha()
@@ -281,7 +359,7 @@ class PracticeSuites(object):
 
 class PracticeSuite(object):
 
-    def __init__(self, suite_node):
+    def __init__(self, suite_node, randomly = True):
         self.dictionary = dict()
         self.total_rate = 0
         self.id = suite_node.get("id")
@@ -290,11 +368,19 @@ class PracticeSuite(object):
             self.dictionary[element.get("id")] = rate
         for key in self.dictionary.keys():
             self.total_rate = self.total_rate + self.dictionary[key]
+        self.current_index = -1
+        self.randomly = randomly
 
     def get_id(self):
         return self.id
 
     def choose_one_id(self):
+        if self.randomly:
+            return self.choose_one_id_randomly()
+        else:
+            return self.choose_one_id_sequentially()
+
+    def choose_one_id_randomly(self):
         random_number = random.randint(1, self.total_rate)
         threshold = 0
         for key in self.dictionary.keys():
@@ -303,6 +389,12 @@ class PracticeSuite(object):
                 break
         chosen_id = key
         return chosen_id
+
+    def choose_one_id_sequentially(self):
+        self.current_index = self.current_index + 1
+        if self.current_index >= len(self.dictionary):
+            self.current_index = 0
+        return list(self.dictionary.keys())[self.current_index]
 
 
 class PracticeCases(object):
@@ -318,8 +410,14 @@ class PracticeCases(object):
                     id_name = case.get("id")
                     key = case.find("./score").get("key")
                     notes = list()
-                    for note in case.findall("./notes/note"):
-                        notes.append(Note(note.get("name")))
+                    for note_node in case.findall("./notes/note"):
+                        note_name = note_node.get("name")
+                        note_step = note_node.get("step")
+                        if note_step:
+                            note = Note(note_name, note_step)
+                        else:
+                            note = Note(note_name)
+                        notes.append(note)
                     self.cases[id_name] = PracticeCaseAsScore(id_name, key, notes)
                 elif type_name == "chord":
                     pass   ##### TODO #####
@@ -373,14 +471,19 @@ class PracticeCaseAsSound(PracticeCase):
 
 class Note(object):
 
-    def __init__(self, name):
+    def __init__(self, name, step = None):
         self.name = name
+        self.step = step
 
     def get_name(self):
         return self.name
 
     def get_position_name(self):
         return re.sub("^(.).?(.)$", r"\1\2", self.name)
+
+    def get_step(self):
+        return self.step
+
 
 class MidiEvent(object):
 

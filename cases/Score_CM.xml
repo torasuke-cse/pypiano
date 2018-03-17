@@ -108,88 +108,130 @@
       <note name="G4" />
     </notes>
   </case>
+  <case type="score" id="Score_CM_F4">
+    <score key="CM" />
+    <notes>
+      <note name="F4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_CM_E4">
+    <score key="CM" />
+    <notes>
+      <note name="E4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_CM_D4">
+    <score key="CM" />
+    <notes>
+      <note name="D4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_CM_C4">
+    <score key="CM" />
+    <notes>
+      <note name="C4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_CM_B3">
+    <score key="CM" />
+    <notes>
+      <note name="B3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_CM_A3">
+    <score key="CM" />
+    <notes>
+      <note name="A3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_CM_G3">
+    <score key="CM" />
+    <notes>
+      <note name="G3" />
+    </notes>
+  </case>
   <case type="score" id="Score_CM_F4_Upper">
     <score key="CM" />
     <notes>
-      <note name="F4" position="upper" />
+      <note name="F4" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_E4_Upper">
     <score key="CM" />
     <notes>
-      <note name="E4" position="upper" />
+      <note name="E4" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_D4_Upper">
     <score key="CM" />
     <notes>
-      <note name="D4" position="upper" />
+      <note name="D4" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_C4_Upper">
     <score key="CM" />
     <notes>
-      <note name="C4" position="upper" />
+      <note name="C4" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_B3_Upper">
     <score key="CM" />
     <notes>
-      <note name="B3" position="upper" />
+      <note name="B3" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_A3_Upper">
     <score key="CM" />
     <notes>
-      <note name="A3" position="upper" />
+      <note name="A3" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_G3_Upper">
     <score key="CM" />
     <notes>
-      <note name="G3" position="upper" />
+      <note name="G3" step="Upper" />
     </notes>
   </case>
   <case type="score" id="Score_CM_F4_Lower">
     <score key="CM" />
     <notes>
-      <note name="F4" position="lower" />
+      <note name="F4" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_E4_Lower">
     <score key="CM" />
     <notes>
-      <note name="E4" position="lower" />
+      <note name="E4" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_D4_Lower">
     <score key="CM" />
     <notes>
-      <note name="D4" position="lower" />
+      <note name="D4" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_C4_Lower">
     <score key="CM" />
     <notes>
-      <note name="C4" position="lower" />
+      <note name="C4" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_B3_Lower">
     <score key="CM" />
     <notes>
-      <note name="B3" position="lower" />
+      <note name="B3" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_A3_Lower">
     <score key="CM" />
     <notes>
-      <note name="A3" position="lower" />
+      <note name="A3" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_G3_Lower">
     <score key="CM" />
     <notes>
-      <note name="G3" position="lower" />
+      <note name="G3" step="Lower" />
     </notes>
   </case>
   <case type="score" id="Score_CM_F3">

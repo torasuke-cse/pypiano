@@ -7,8 +7,8 @@ This application makes you to be easy to read musical scores rapidly.
 """
 
 __author__    = 'MIYAZAKI Masafumi (The Project Fukurous)'
-__date__      = '2018/03/14'
-__version__   = '0.1.2'
+__date__      = '2018/03/18'
+__version__   = '0.1.3'
 
 __copyright__ = "Copyright 2017-2018 MIYAZAKI Masafumi (The Project Fukurous)"
 __license__   = 'The 2-Clause BSD License'
@@ -49,11 +49,22 @@ class PyPiano(object):
         self.pressing_keys = list()
 
     def perform(self):
-        self.initialize()
-        self.select_device()
-        self.select_suite()
-        self.execute_suite()
-        self.finalize()
+        try:
+            self.write_info_log("PyPiano started.")
+            self.initialize()
+            self.select_suite()
+            raise SystemContinuationException
+            self.select_device()
+            self.execute_suite()
+        except NotFoundMidiDeviceException as exception:
+            self.write_error_log("Not found MIDI devices")
+        except NotFoundMidiInputDeviceException as exception:
+            self.write_error_log("Not found MIDI input devices")
+        except SystemContinuationException as exception:
+            self.write_info_log("Receive a request to exit application")
+        finally:
+            self.finalize()
+            self.write_info_log("PyPiano stopped.")
         return self.EXIT_SUCCESS
 
     def initialize(self):
@@ -66,11 +77,33 @@ class PyPiano(object):
         pygame.display.update()
 
     def select_device(self):
-        print("Count of MIDI devices: " + str(pygame.midi.get_count()))
+        input_devices = self.get_midi_input_devices()
+        self.print_device_list(input_devices)
         device_id = int(input("Choose device_id: "))
-        print("MIDI Device: " + str(pygame.midi.get_device_info(device_id)))
         self.midi_device = pygame.midi.Input(device_id)
-        input("Press any key to continue...")
+        self.write_info_log("MIDI device connected")
+
+    def get_midi_input_devices(self):
+        number_of_midi_devices = pygame.midi.get_count()
+        if number_of_midi_devices <= 0:
+            raise NotFoundMidiDeviceException
+        is_closed_input_device = lambda device: (device[2] == 1 and device[4] == 0)
+        input_devices = list()
+        for device_id in range(number_of_midi_devices):
+            device_info = pygame.midi.get_device_info(device_id)
+            if is_closed_input_device(device_info):
+                input_devices.append((device_id, device_info))
+        if len(input_devices) <= 0:
+            raise NotFoundMidiInputDeviceException
+        return input_devices
+
+    def print_device_list(self, input_devices):
+        print("======= MIDI Devices =======")
+        for device in input_devices:
+            device_id = device[0]
+            device_name = device[1][1].decode()
+            print(" " + str(device_id) + " : " + device_name)
+        print("============================")
 
     def select_suite(self):
         self.current_suite = self.practice_suites.get_by_id("Score_CM")   ##### TODO #####
@@ -313,11 +346,18 @@ class PyPiano(object):
         self.write_info_log("Case(" + self.current_case.get_id() + ") in Suite(" + self.current_suite.get_id() + ") is " + action + ".")
 
     def write_info_log(self, message):
+        self.write_log_with_tag("[Info]", message)
+
+    def write_error_log(self, message):
+        self.write_log_with_tag("[Error]", message)
+
+    def write_log_with_tag(self, tag, message):
         timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-        print("[Info][" + timestamp + "] " + message)
+        print("[" + timestamp + "]" + tag + " " + message)
 
     def finalize(self):
-        self.midi_device.close()
+        if self.midi_device is not None:
+            self.midi_device.close()
         pygame.midi.quit()
         pygame.quit()
 
@@ -510,6 +550,21 @@ class MidiEvent(object):
 
     def is_note_off(self):
         return (self.raw_event != None) and (self.get_status() == 0x80)
+
+
+class SystemContinuationException(Exception):
+    
+    pass
+
+
+class NotFoundMidiDeviceException(Exception):
+
+    pass
+
+
+class NotFoundMidiInputDeviceException(Exception):
+
+    pass
 
 
 def main():

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+  <suite id="Score_EM">
+    <case id="Score_EM_Cs7" rate="100" />
+    <case id="Score_EM_B6" rate="100" />
+    <case id="Score_EM_A6" rate="100" />
+    <case id="Score_EM_Gs6" rate="100" />
+    <case id="Score_EM_Fs6" rate="100" />
+    <case id="Score_EM_E6" rate="100" />
+    <case id="Score_EM_Ds6" rate="100" />
+    <case id="Score_EM_Cs6" rate="100" />
+    <case id="Score_EM_B5" rate="100" />
+    <case id="Score_EM_A5" rate="100" />
+    <case id="Score_EM_Gs5" rate="100" />
+    <case id="Score_EM_Fs5" rate="100" />
+    <case id="Score_EM_E5" rate="100" />
+    <case id="Score_EM_Ds5" rate="100" />
+    <case id="Score_EM_Cs5" rate="100" />
+    <case id="Score_EM_B4" rate="100" />
+    <case id="Score_EM_A4" rate="100" />
+    <case id="Score_EM_Gs4" rate="100" />
+    <case id="Score_EM_Fs4" rate="100" />
+    <case id="Score_EM_E4" rate="100" />
+    <case id="Score_EM_Ds4" rate="100" />
+    <case id="Score_EM_Cs4" rate="100" />
+    <case id="Score_EM_B3" rate="100" />
+    <case id="Score_EM_A3" rate="100" />
+    <case id="Score_EM_Gs3" rate="100" />
+    <case id="Score_EM_Fs3" rate="100" />
+    <case id="Score_EM_E3" rate="100" />
+    <case id="Score_EM_Ds3" rate="100" />
+    <case id="Score_EM_Cs3" rate="100" />
+    <case id="Score_EM_B2" rate="100" />
+    <case id="Score_EM_A2" rate="100" />
+    <case id="Score_EM_Gs2" rate="100" />
+    <case id="Score_EM_Fs2" rate="100" />
+    <case id="Score_EM_E2" rate="100" />
+    <case id="Score_EM_Ds2" rate="100" />
+    <case id="Score_EM_Cs2" rate="100" />
+    <case id="Score_EM_B1" rate="100" />
+    <case id="Score_EM_A1" rate="100" />
+    <case id="Score_EM_Gs1" rate="100" />
+    <case id="Score_EM_Fs1" rate="100" />
+    <case id="Score_EM_E1" rate="100" />
+    <case id="Score_EM_Ds1" rate="100" />
+    <case id="Score_EM_Cs1" rate="100" />
+    <case id="Score_EM_Fs4_Upper" rate="100" />
+    <case id="Score_EM_E4_Upper" rate="100" />
+    <case id="Score_EM_Ds4_Upper" rate="100" />
+    <case id="Score_EM_Cs4_Upper" rate="100" />
+    <case id="Score_EM_B3_Upper" rate="100" />
+    <case id="Score_EM_A3_Upper" rate="100" />
+    <case id="Score_EM_Gs3_Upper" rate="100" />
+    <case id="Score_EM_Fs4_Lower" rate="100" />
+    <case id="Score_EM_E4_Lower" rate="100" />
+    <case id="Score_EM_Ds4_Lower" rate="100" />
+    <case id="Score_EM_Cs4_Lower" rate="100" />
+    <case id="Score_EM_B3_Lower" rate="100" />
+    <case id="Score_EM_A3_Lower" rate="100" />
+    <case id="Score_EM_Gs3_Lower" rate="100" />
+  </suite>
+</suites>

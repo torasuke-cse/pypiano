@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+  <suite id="Score_BM">
+    <case id="Score_BM_Cs7" rate="100" />
+    <case id="Score_BM_B6" rate="100" />
+    <case id="Score_BM_As6" rate="100" />
+    <case id="Score_BM_Gs6" rate="100" />
+    <case id="Score_BM_Fs6" rate="100" />
+    <case id="Score_BM_E6" rate="100" />
+    <case id="Score_BM_Ds6" rate="100" />
+    <case id="Score_BM_Cs6" rate="100" />
+    <case id="Score_BM_B5" rate="100" />
+    <case id="Score_BM_As5" rate="100" />
+    <case id="Score_BM_Gs5" rate="100" />
+    <case id="Score_BM_Fs5" rate="100" />
+    <case id="Score_BM_E5" rate="100" />
+    <case id="Score_BM_Ds5" rate="100" />
+    <case id="Score_BM_Cs5" rate="100" />
+    <case id="Score_BM_B4" rate="100" />
+    <case id="Score_BM_As4" rate="100" />
+    <case id="Score_BM_Gs4" rate="100" />
+    <case id="Score_BM_Fs4" rate="100" />
+    <case id="Score_BM_E4" rate="100" />
+    <case id="Score_BM_Ds4" rate="100" />
+    <case id="Score_BM_Cs4" rate="100" />
+    <case id="Score_BM_B3" rate="100" />
+    <case id="Score_BM_As3" rate="100" />
+    <case id="Score_BM_Gs3" rate="100" />
+    <case id="Score_BM_Fs3" rate="100" />
+    <case id="Score_BM_E3" rate="100" />
+    <case id="Score_BM_Ds3" rate="100" />
+    <case id="Score_BM_Cs3" rate="100" />
+    <case id="Score_BM_B2" rate="100" />
+    <case id="Score_BM_As2" rate="100" />
+    <case id="Score_BM_Gs2" rate="100" />
+    <case id="Score_BM_Fs2" rate="100" />
+    <case id="Score_BM_E2" rate="100" />
+    <case id="Score_BM_Ds2" rate="100" />
+    <case id="Score_BM_Cs2" rate="100" />
+    <case id="Score_BM_B1" rate="100" />
+    <case id="Score_BM_As1" rate="100" />
+    <case id="Score_BM_Gs1" rate="100" />
+    <case id="Score_BM_Fs1" rate="100" />
+    <case id="Score_BM_E1" rate="100" />
+    <case id="Score_BM_Ds1" rate="100" />
+    <case id="Score_BM_Cs1" rate="100" />
+    <case id="Score_BM_Fs4_Upper" rate="100" />
+    <case id="Score_BM_E4_Upper" rate="100" />
+    <case id="Score_BM_Ds4_Upper" rate="100" />
+    <case id="Score_BM_Cs4_Upper" rate="100" />
+    <case id="Score_BM_B3_Upper" rate="100" />
+    <case id="Score_BM_As3_Upper" rate="100" />
+    <case id="Score_BM_Gs3_Upper" rate="100" />
+    <case id="Score_BM_Fs4_Lower" rate="100" />
+    <case id="Score_BM_E4_Lower" rate="100" />
+    <case id="Score_BM_Ds4_Lower" rate="100" />
+    <case id="Score_BM_Cs4_Lower" rate="100" />
+    <case id="Score_BM_B3_Lower" rate="100" />
+    <case id="Score_BM_As3_Lower" rate="100" />
+    <case id="Score_BM_Gs3_Lower" rate="100" />
+  </suite>
+</suites>

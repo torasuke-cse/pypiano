@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cases>
+  <case type="score" id="Score_GM_C7">
+    <score key="GM" />
+    <notes>
+      <note name="C7" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B6">
+    <score key="GM" />
+    <notes>
+      <note name="B6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A6">
+    <score key="GM" />
+    <notes>
+      <note name="A6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G6">
+    <score key="GM" />
+    <notes>
+      <note name="G6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs6">
+    <score key="GM" />
+    <notes>
+      <note name="Fs6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E6">
+    <score key="GM" />
+    <notes>
+      <note name="E6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D6">
+    <score key="GM" />
+    <notes>
+      <note name="D6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C6">
+    <score key="GM" />
+    <notes>
+      <note name="C6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B5">
+    <score key="GM" />
+    <notes>
+      <note name="B5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A5">
+    <score key="GM" />
+    <notes>
+      <note name="A5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G5">
+    <score key="GM" />
+    <notes>
+      <note name="G5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs5">
+    <score key="GM" />
+    <notes>
+      <note name="Fs5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E5">
+    <score key="GM" />
+    <notes>
+      <note name="E5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D5">
+    <score key="GM" />
+    <notes>
+      <note name="D5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C5">
+    <score key="GM" />
+    <notes>
+      <note name="C5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B4">
+    <score key="GM" />
+    <notes>
+      <note name="B4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A4">
+    <score key="GM" />
+    <notes>
+      <note name="A4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G4">
+    <score key="GM" />
+    <notes>
+      <note name="G4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs4">
+    <score key="GM" />
+    <notes>
+      <note name="Fs4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E4">
+    <score key="GM" />
+    <notes>
+      <note name="E4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D4">
+    <score key="GM" />
+    <notes>
+      <note name="D4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C4">
+    <score key="GM" />
+    <notes>
+      <note name="C4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B3">
+    <score key="GM" />
+    <notes>
+      <note name="B3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A3">
+    <score key="GM" />
+    <notes>
+      <note name="A3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G3">
+    <score key="GM" />
+    <notes>
+      <note name="G3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs3">
+    <score key="GM" />
+    <notes>
+      <note name="Fs3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E3">
+    <score key="GM" />
+    <notes>
+      <note name="E3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D3">
+    <score key="GM" />
+    <notes>
+      <note name="D3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C3">
+    <score key="GM" />
+    <notes>
+      <note name="C3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B2">
+    <score key="GM" />
+    <notes>
+      <note name="B2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A2">
+    <score key="GM" />
+    <notes>
+      <note name="A2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G2">
+    <score key="GM" />
+    <notes>
+      <note name="G2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs2">
+    <score key="GM" />
+    <notes>
+      <note name="Fs2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E2">
+    <score key="GM" />
+    <notes>
+      <note name="E2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D2">
+    <score key="GM" />
+    <notes>
+      <note name="D2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C2">
+    <score key="GM" />
+    <notes>
+      <note name="C2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B1">
+    <score key="GM" />
+    <notes>
+      <note name="B1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A1">
+    <score key="GM" />
+    <notes>
+      <note name="A1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G1">
+    <score key="GM" />
+    <notes>
+      <note name="G1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs1">
+    <score key="GM" />
+    <notes>
+      <note name="Fs1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E1">
+    <score key="GM" />
+    <notes>
+      <note name="E1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D1">
+    <score key="GM" />
+    <notes>
+      <note name="D1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C1">
+    <score key="GM" />
+    <notes>
+      <note name="C1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs4_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="Fs4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E4_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="E4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D4_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="D4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C4_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="C4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B3_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="B3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A3_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="A3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G3_Upper">
+    <score key="GM" />
+    <notes>
+      <note name="G3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_Fs4_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="Fs4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_E4_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="E4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_D4_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="D4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_C4_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="C4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_B3_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="B3" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_A3_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="A3" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GM_G3_Lower">
+    <score key="GM" />
+    <notes>
+      <note name="G3" step="Lower" />
+    </notes>
+  </case>
+</cases>

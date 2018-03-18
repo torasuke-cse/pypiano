@@ -19,20 +19,13 @@
     <case id="Score_CM_B4" rate="100" />
     <case id="Score_CM_A4" rate="100" />
     <case id="Score_CM_G4" rate="100" />
-    <case id="Score_CM_F4_Upper" rate="100" />
-    <case id="Score_CM_E4_Upper" rate="100" />
-    <case id="Score_CM_D4_Upper" rate="100" />
-    <case id="Score_CM_C4_Upper" rate="100" />
-    <case id="Score_CM_B3_Upper" rate="100" />
-    <case id="Score_CM_A3_Upper" rate="100" />
-    <case id="Score_CM_G3_Upper" rate="100" />
-    <case id="Score_CM_F4_Lower" rate="100" />
-    <case id="Score_CM_E4_Lower" rate="100" />
-    <case id="Score_CM_D4_Lower" rate="100" />
-    <case id="Score_CM_C4_Lower" rate="100" />
-    <case id="Score_CM_B3_Lower" rate="100" />
-    <case id="Score_CM_A3_Lower" rate="100" />
-    <case id="Score_CM_G3_Lower" rate="100" />
+    <case id="Score_CM_F4" rate="100" />
+    <case id="Score_CM_E4" rate="100" />
+    <case id="Score_CM_D4" rate="100" />
+    <case id="Score_CM_C4" rate="100" />
+    <case id="Score_CM_B3" rate="100" />
+    <case id="Score_CM_A3" rate="100" />
+    <case id="Score_CM_G3" rate="100" />
     <case id="Score_CM_F3" rate="100" />
     <case id="Score_CM_E3" rate="100" />
     <case id="Score_CM_D3" rate="100" />
@@ -51,5 +44,19 @@
     <case id="Score_CM_E1" rate="100" />
     <case id="Score_CM_D1" rate="100" />
     <case id="Score_CM_C1" rate="100" />
+    <case id="Score_CM_F4_Upper" rate="100" />
+    <case id="Score_CM_E4_Upper" rate="100" />
+    <case id="Score_CM_D4_Upper" rate="100" />
+    <case id="Score_CM_C4_Upper" rate="100" />
+    <case id="Score_CM_B3_Upper" rate="100" />
+    <case id="Score_CM_A3_Upper" rate="100" />
+    <case id="Score_CM_G3_Upper" rate="100" />
+    <case id="Score_CM_F4_Lower" rate="100" />
+    <case id="Score_CM_E4_Lower" rate="100" />
+    <case id="Score_CM_D4_Lower" rate="100" />
+    <case id="Score_CM_C4_Lower" rate="100" />
+    <case id="Score_CM_B3_Lower" rate="100" />
+    <case id="Score_CM_A3_Lower" rate="100" />
+    <case id="Score_CM_G3_Lower" rate="100" />
   </suite>
 </suites>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cases>
+  <case type="score" id="Score_GfM_Cf7">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf7" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf6">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af6">
+    <score key="GfM" />
+    <notes>
+      <note name="Af6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf6">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F6">
+    <score key="GfM" />
+    <notes>
+      <note name="F6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef6">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df6">
+    <score key="GfM" />
+    <notes>
+      <note name="Df6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf6">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf5">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af5">
+    <score key="GfM" />
+    <notes>
+      <note name="Af5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf5">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F5">
+    <score key="GfM" />
+    <notes>
+      <note name="F5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef5">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df5">
+    <score key="GfM" />
+    <notes>
+      <note name="Df5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf5">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf4">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af4">
+    <score key="GfM" />
+    <notes>
+      <note name="Af4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf4">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F4">
+    <score key="GfM" />
+    <notes>
+      <note name="F4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef4">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df4">
+    <score key="GfM" />
+    <notes>
+      <note name="Df4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf4">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf3">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af3">
+    <score key="GfM" />
+    <notes>
+      <note name="Af3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf3">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F3">
+    <score key="GfM" />
+    <notes>
+      <note name="F3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef3">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df3">
+    <score key="GfM" />
+    <notes>
+      <note name="Df3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf3">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf2">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af2">
+    <score key="GfM" />
+    <notes>
+      <note name="Af2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf2">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F2">
+    <score key="GfM" />
+    <notes>
+      <note name="F2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef2">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df2">
+    <score key="GfM" />
+    <notes>
+      <note name="Df2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf2">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf1">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af1">
+    <score key="GfM" />
+    <notes>
+      <note name="Af1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf1">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F1">
+    <score key="GfM" />
+    <notes>
+      <note name="F1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef1">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df1">
+    <score key="GfM" />
+    <notes>
+      <note name="Df1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf1">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F4_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="F4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef4_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df4_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="Df4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf4_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf3_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af3_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="Af3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf3_Upper">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_F4_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="F4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Ef4_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="Ef4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Df4_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="Df4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Cf4_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="Cf4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Bf3_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="Bf3" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Af3_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="Af3" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_GfM_Gf3_Lower">
+    <score key="GfM" />
+    <notes>
+      <note name="Gf3" step="Lower" />
+    </notes>
+  </case>
+</cases>

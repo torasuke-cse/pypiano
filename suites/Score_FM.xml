@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+  <suite id="Score_FM">
+    <case id="Score_FM_C7" rate="100" />
+    <case id="Score_FM_Bf6" rate="100" />
+    <case id="Score_FM_A6" rate="100" />
+    <case id="Score_FM_G6" rate="100" />
+    <case id="Score_FM_F6" rate="100" />
+    <case id="Score_FM_E6" rate="100" />
+    <case id="Score_FM_D6" rate="100" />
+    <case id="Score_FM_C6" rate="100" />
+    <case id="Score_FM_Bf5" rate="100" />
+    <case id="Score_FM_A5" rate="100" />
+    <case id="Score_FM_G5" rate="100" />
+    <case id="Score_FM_F5" rate="100" />
+    <case id="Score_FM_E5" rate="100" />
+    <case id="Score_FM_D5" rate="100" />
+    <case id="Score_FM_C5" rate="100" />
+    <case id="Score_FM_Bf4" rate="100" />
+    <case id="Score_FM_A4" rate="100" />
+    <case id="Score_FM_G4" rate="100" />
+    <case id="Score_FM_F4" rate="100" />
+    <case id="Score_FM_E4" rate="100" />
+    <case id="Score_FM_D4" rate="100" />
+    <case id="Score_FM_C4" rate="100" />
+    <case id="Score_FM_Bf3" rate="100" />
+    <case id="Score_FM_A3" rate="100" />
+    <case id="Score_FM_G3" rate="100" />
+    <case id="Score_FM_F3" rate="100" />
+    <case id="Score_FM_E3" rate="100" />
+    <case id="Score_FM_D3" rate="100" />
+    <case id="Score_FM_C3" rate="100" />
+    <case id="Score_FM_Bf2" rate="100" />
+    <case id="Score_FM_A2" rate="100" />
+    <case id="Score_FM_G2" rate="100" />
+    <case id="Score_FM_F2" rate="100" />
+    <case id="Score_FM_E2" rate="100" />
+    <case id="Score_FM_D2" rate="100" />
+    <case id="Score_FM_C2" rate="100" />
+    <case id="Score_FM_Bf1" rate="100" />
+    <case id="Score_FM_A1" rate="100" />
+    <case id="Score_FM_G1" rate="100" />
+    <case id="Score_FM_F1" rate="100" />
+    <case id="Score_FM_E1" rate="100" />
+    <case id="Score_FM_D1" rate="100" />
+    <case id="Score_FM_C1" rate="100" />
+    <case id="Score_FM_F4_Upper" rate="100" />
+    <case id="Score_FM_E4_Upper" rate="100" />
+    <case id="Score_FM_D4_Upper" rate="100" />
+    <case id="Score_FM_C4_Upper" rate="100" />
+    <case id="Score_FM_Bf3_Upper" rate="100" />
+    <case id="Score_FM_A3_Upper" rate="100" />
+    <case id="Score_FM_G3_Upper" rate="100" />
+    <case id="Score_FM_F4_Lower" rate="100" />
+    <case id="Score_FM_E4_Lower" rate="100" />
+    <case id="Score_FM_D4_Lower" rate="100" />
+    <case id="Score_FM_C4_Lower" rate="100" />
+    <case id="Score_FM_Bf3_Lower" rate="100" />
+    <case id="Score_FM_A3_Lower" rate="100" />
+    <case id="Score_FM_G3_Lower" rate="100" />
+  </suite>
+</suites>

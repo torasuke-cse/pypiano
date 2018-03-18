@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cases>
+  <case type="score" id="Score_DM_Cs7">
+    <score key="DM" />
+    <notes>
+      <note name="Cs7" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B6">
+    <score key="DM" />
+    <notes>
+      <note name="B6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A6">
+    <score key="DM" />
+    <notes>
+      <note name="A6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G6">
+    <score key="DM" />
+    <notes>
+      <note name="G6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs6">
+    <score key="DM" />
+    <notes>
+      <note name="Fs6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E6">
+    <score key="DM" />
+    <notes>
+      <note name="E6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D6">
+    <score key="DM" />
+    <notes>
+      <note name="D6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs6">
+    <score key="DM" />
+    <notes>
+      <note name="Cs6" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B5">
+    <score key="DM" />
+    <notes>
+      <note name="B5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A5">
+    <score key="DM" />
+    <notes>
+      <note name="A5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G5">
+    <score key="DM" />
+    <notes>
+      <note name="G5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs5">
+    <score key="DM" />
+    <notes>
+      <note name="Fs5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E5">
+    <score key="DM" />
+    <notes>
+      <note name="E5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D5">
+    <score key="DM" />
+    <notes>
+      <note name="D5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs5">
+    <score key="DM" />
+    <notes>
+      <note name="Cs5" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B4">
+    <score key="DM" />
+    <notes>
+      <note name="B4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A4">
+    <score key="DM" />
+    <notes>
+      <note name="A4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G4">
+    <score key="DM" />
+    <notes>
+      <note name="G4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs4">
+    <score key="DM" />
+    <notes>
+      <note name="Fs4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E4">
+    <score key="DM" />
+    <notes>
+      <note name="E4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D4">
+    <score key="DM" />
+    <notes>
+      <note name="D4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs4">
+    <score key="DM" />
+    <notes>
+      <note name="Cs4" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B3">
+    <score key="DM" />
+    <notes>
+      <note name="B3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A3">
+    <score key="DM" />
+    <notes>
+      <note name="A3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G3">
+    <score key="DM" />
+    <notes>
+      <note name="G3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs3">
+    <score key="DM" />
+    <notes>
+      <note name="Fs3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E3">
+    <score key="DM" />
+    <notes>
+      <note name="E3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D3">
+    <score key="DM" />
+    <notes>
+      <note name="D3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs3">
+    <score key="DM" />
+    <notes>
+      <note name="Cs3" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B2">
+    <score key="DM" />
+    <notes>
+      <note name="B2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A2">
+    <score key="DM" />
+    <notes>
+      <note name="A2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G2">
+    <score key="DM" />
+    <notes>
+      <note name="G2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs2">
+    <score key="DM" />
+    <notes>
+      <note name="Fs2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E2">
+    <score key="DM" />
+    <notes>
+      <note name="E2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D2">
+    <score key="DM" />
+    <notes>
+      <note name="D2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs2">
+    <score key="DM" />
+    <notes>
+      <note name="Cs2" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B1">
+    <score key="DM" />
+    <notes>
+      <note name="B1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A1">
+    <score key="DM" />
+    <notes>
+      <note name="A1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G1">
+    <score key="DM" />
+    <notes>
+      <note name="G1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs1">
+    <score key="DM" />
+    <notes>
+      <note name="Fs1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E1">
+    <score key="DM" />
+    <notes>
+      <note name="E1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D1">
+    <score key="DM" />
+    <notes>
+      <note name="D1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs1">
+    <score key="DM" />
+    <notes>
+      <note name="Cs1" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs4_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="Fs4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E4_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="E4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D4_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="D4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs4_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="Cs4" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B3_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="B3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A3_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="A3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G3_Upper">
+    <score key="DM" />
+    <notes>
+      <note name="G3" step="Upper" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Fs4_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="Fs4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_E4_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="E4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_D4_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="D4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_Cs4_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="Cs4" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_B3_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="B3" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_A3_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="A3" step="Lower" />
+    </notes>
+  </case>
+  <case type="score" id="Score_DM_G3_Lower">
+    <score key="DM" />
+    <notes>
+      <note name="G3" step="Lower" />
+    </notes>
+  </case>
+</cases>

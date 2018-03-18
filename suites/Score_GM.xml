@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+  <suite id="Score_GM">
+    <case id="Score_GM_C7" rate="100" />
+    <case id="Score_GM_B6" rate="100" />
+    <case id="Score_GM_A6" rate="100" />
+    <case id="Score_GM_G6" rate="100" />
+    <case id="Score_GM_Fs6" rate="100" />
+    <case id="Score_GM_E6" rate="100" />
+    <case id="Score_GM_D6" rate="100" />
+    <case id="Score_GM_C6" rate="100" />
+    <case id="Score_GM_B5" rate="100" />
+    <case id="Score_GM_A5" rate="100" />
+    <case id="Score_GM_G5" rate="100" />
+    <case id="Score_GM_Fs5" rate="100" />
+    <case id="Score_GM_E5" rate="100" />
+    <case id="Score_GM_D5" rate="100" />
+    <case id="Score_GM_C5" rate="100" />
+    <case id="Score_GM_B4" rate="100" />
+    <case id="Score_GM_A4" rate="100" />
+    <case id="Score_GM_G4" rate="100" />
+    <case id="Score_GM_Fs4" rate="100" />
+    <case id="Score_GM_E4" rate="100" />
+    <case id="Score_GM_D4" rate="100" />
+    <case id="Score_GM_C4" rate="100" />
+    <case id="Score_GM_B3" rate="100" />
+    <case id="Score_GM_A3" rate="100" />
+    <case id="Score_GM_G3" rate="100" />
+    <case id="Score_GM_Fs3" rate="100" />
+    <case id="Score_GM_E3" rate="100" />
+    <case id="Score_GM_D3" rate="100" />
+    <case id="Score_GM_C3" rate="100" />
+    <case id="Score_GM_B2" rate="100" />
+    <case id="Score_GM_A2" rate="100" />
+    <case id="Score_GM_G2" rate="100" />
+    <case id="Score_GM_Fs2" rate="100" />
+    <case id="Score_GM_E2" rate="100" />
+    <case id="Score_GM_D2" rate="100" />
+    <case id="Score_GM_C2" rate="100" />
+    <case id="Score_GM_B1" rate="100" />
+    <case id="Score_GM_A1" rate="100" />
+    <case id="Score_GM_G1" rate="100" />
+    <case id="Score_GM_Fs1" rate="100" />
+    <case id="Score_GM_E1" rate="100" />
+    <case id="Score_GM_D1" rate="100" />
+    <case id="Score_GM_C1" rate="100" />
+    <case id="Score_GM_Fs4_Upper" rate="100" />
+    <case id="Score_GM_E4_Upper" rate="100" />
+    <case id="Score_GM_D4_Upper" rate="100" />
+    <case id="Score_GM_C4_Upper" rate="100" />
+    <case id="Score_GM_B3_Upper" rate="100" />
+    <case id="Score_GM_A3_Upper" rate="100" />
+    <case id="Score_GM_G3_Upper" rate="100" />
+    <case id="Score_GM_Fs4_Lower" rate="100" />
+    <case id="Score_GM_E4_Lower" rate="100" />
+    <case id="Score_GM_D4_Lower" rate="100" />
+    <case id="Score_GM_C4_Lower" rate="100" />
+    <case id="Score_GM_B3_Lower" rate="100" />
+    <case id="Score_GM_A3_Lower" rate="100" />
+    <case id="Score_GM_G3_Lower" rate="100" />
+  </suite>
+</suites>

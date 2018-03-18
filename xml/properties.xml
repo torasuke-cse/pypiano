@@ -5,7 +5,7 @@
   <property key="WindowTitle" value="PyPiano" />
   <property key="WindowWidth" value="800" />
   <property key="WindowHeight" value="600" />
-  <property key="DisplayScale" value="0.5" />
+  <property key="DisplayScale" value="0.3" />
   <property key="IntervalTime" value="500" />
   <property key="NoteImage" value="./images/note.png" />
   <property key="NoteImageAsAnswer" value="./images/note_as_answer.png" />

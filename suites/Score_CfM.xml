@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+  <suite id="Score_CfM">
+    <case id="Score_CfM_Cf7" rate="100" />
+    <case id="Score_CfM_Bf6" rate="100" />
+    <case id="Score_CfM_Af6" rate="100" />
+    <case id="Score_CfM_Gf6" rate="100" />
+    <case id="Score_CfM_Ff6" rate="100" />
+    <case id="Score_CfM_Ef6" rate="100" />
+    <case id="Score_CfM_Df6" rate="100" />
+    <case id="Score_CfM_Cf6" rate="100" />
+    <case id="Score_CfM_Bf5" rate="100" />
+    <case id="Score_CfM_Af5" rate="100" />
+    <case id="Score_CfM_Gf5" rate="100" />
+    <case id="Score_CfM_Ff5" rate="100" />
+    <case id="Score_CfM_Ef5" rate="100" />
+    <case id="Score_CfM_Df5" rate="100" />
+    <case id="Score_CfM_Cf5" rate="100" />
+    <case id="Score_CfM_Bf4" rate="100" />
+    <case id="Score_CfM_Af4" rate="100" />
+    <case id="Score_CfM_Gf4" rate="100" />
+    <case id="Score_CfM_Ff4" rate="100" />
+    <case id="Score_CfM_Ef4" rate="100" />
+    <case id="Score_CfM_Df4" rate="100" />
+    <case id="Score_CfM_Cf4" rate="100" />
+    <case id="Score_CfM_Bf3" rate="100" />
+    <case id="Score_CfM_Af3" rate="100" />
+    <case id="Score_CfM_Gf3" rate="100" />
+    <case id="Score_CfM_Ff3" rate="100" />
+    <case id="Score_CfM_Ef3" rate="100" />
+    <case id="Score_CfM_Df3" rate="100" />
+    <case id="Score_CfM_Cf3" rate="100" />
+    <case id="Score_CfM_Bf2" rate="100" />
+    <case id="Score_CfM_Af2" rate="100" />
+    <case id="Score_CfM_Gf2" rate="100" />
+    <case id="Score_CfM_Ff2" rate="100" />
+    <case id="Score_CfM_Ef2" rate="100" />
+    <case id="Score_CfM_Df2" rate="100" />
+    <case id="Score_CfM_Cf2" rate="100" />
+    <case id="Score_CfM_Bf1" rate="100" />
+    <case id="Score_CfM_Af1" rate="100" />
+    <case id="Score_CfM_Gf1" rate="100" />
+    <case id="Score_CfM_Ff1" rate="100" />
+    <case id="Score_CfM_Ef1" rate="100" />
+    <case id="Score_CfM_Df1" rate="100" />
+    <case id="Score_CfM_Cf1" rate="100" />
+    <case id="Score_CfM_Ff4_Upper" rate="100" />
+    <case id="Score_CfM_Ef4_Upper" rate="100" />
+    <case id="Score_CfM_Df4_Upper" rate="100" />
+    <case id="Score_CfM_Cf4_Upper" rate="100" />
+    <case id="Score_CfM_Bf3_Upper" rate="100" />
+    <case id="Score_CfM_Af3_Upper" rate="100" />
+    <case id="Score_CfM_Gf3_Upper" rate="100" />
+    <case id="Score_CfM_Ff4_Lower" rate="100" />
+    <case id="Score_CfM_Ef4_Lower" rate="100" />
+    <case id="Score_CfM_Df4_Lower" rate="100" />
+    <case id="Score_CfM_Cf4_Lower" rate="100" />
+    <case id="Score_CfM_Bf3_Lower" rate="100" />
+    <case id="Score_CfM_Af3_Lower" rate="100" />
+    <case id="Score_CfM_Gf3_Lower" rate="100" />
+  </suite>
+</suites>

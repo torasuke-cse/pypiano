@@ -592,7 +592,6 @@ def main():
     """ Main routine """
     instance = PyPiano()
     return_code = instance.perform()
-    #return_code = readXmlForTest()
     return return_code
 
 

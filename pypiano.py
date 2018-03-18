@@ -8,7 +8,7 @@ This application makes you to be easy to read musical scores rapidly.
 
 __author__    = 'MIYAZAKI Masafumi (The Project Fukurous)'
 __date__      = '2018/03/18'
-__version__   = '0.1.3'
+__version__   = '0.2.0'
 
 __copyright__ = "Copyright 2017-2018 MIYAZAKI Masafumi (The Project Fukurous)"
 __license__   = 'The 2-Clause BSD License'
@@ -29,6 +29,7 @@ import xml.etree.ElementTree
 class PyPiano(object):
 
     FILE_FOR_PROPERTIES = "./xml/properties.xml"
+    FILE_FOR_LOGGER = "./logs/log.txt"
 
     def __init__(self):
         self.props = Properties(PyPiano.FILE_FOR_PROPERTIES)
@@ -47,14 +48,14 @@ class PyPiano(object):
         self.current_case = None
         self.notes_image_height = 1500
         self.pressing_keys = list()
+        self.log_file = None
 
     def perform(self):
         try:
-            self.write_info_log("PyPiano started.")
             self.initialize()
-            self.select_suite()
-            raise SystemContinuationException
+            self.write_info_log("PyPiano started.")
             self.select_device()
+            self.select_suite()
             self.execute_suite()
         except NotFoundMidiDeviceException as exception:
             self.write_error_log("Not found MIDI devices")
@@ -63,11 +64,12 @@ class PyPiano(object):
         except SystemContinuationException as exception:
             self.write_info_log("Receive a request to exit application")
         finally:
-            self.finalize()
             self.write_info_log("PyPiano stopped.")
+            self.finalize()
         return self.EXIT_SUCCESS
 
     def initialize(self):
+        self.log_file = open(PyPiano.FILE_FOR_LOGGER, "a")
         pygame.init()
         pygame.midi.init()
         pygame.fastevent.init()
@@ -106,7 +108,19 @@ class PyPiano(object):
         print("============================")
 
     def select_suite(self):
-        self.current_suite = self.practice_suites.get_by_id("Score_CM")   ##### TODO #####
+        suite_list = self.practice_suites.get_list()
+        self.print_suite_list(suite_list)
+        suite_index = int(input("Choose suite_id: "))
+        suite_id = suite_list[suite_index]
+        self.current_suite = self.practice_suites.get_by_id(suite_id)
+
+    def print_suite_list(self, suite_list):
+        print("========== Suites ==========")
+        for (key, value) in enumerate(suite_list):
+            suite_index = key
+            suite_id = value
+            print(" " + str(suite_index) + " : " + suite_id)
+        print("============================")
 
     def execute_suite(self):
         while True:
@@ -122,7 +136,6 @@ class PyPiano(object):
         self.previous_case = self.current_case
         current_case_id = self.current_suite.choose_one_id()
         self.current_case = self.practice_cases.get_by_id(current_case_id)
-        print(">>> " + current_case_id)
 
     def display_case(self):
         self.screen.fill(self.COLOR_WHITE)
@@ -210,7 +223,7 @@ class PyPiano(object):
             if (note.step is None and
                 note_y >= int(self.props.get("NotePositionY_A3_Upper")) and
                 note_y <= int(self.props.get("NotePositionY_G3_Upper"))):
-                self.add_line_image_into_dictionary("LineImage_Upper_Bottom2st", dictionary)
+                self.add_line_image_into_dictionary("LineImage_Upper_Bottom2nd", dictionary)
             if (note.step == "Upper" and
                 note_y >= int(self.props.get("NotePositionY_C4_Upper")) and
                 note_y <= int(self.props.get("NotePositionY_G3_Upper"))):
@@ -286,8 +299,7 @@ class PyPiano(object):
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT:   # Exit on press Quit button.
-                    return
-                    ##### TODO #####
+                    raise SystemContinuationException
             if self.midi_device.poll():
                 for event in self.midi_device.read(10):
                     self.write_info_log("MIDI event got : " + str(event))
@@ -353,13 +365,19 @@ class PyPiano(object):
 
     def write_log_with_tag(self, tag, message):
         timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-        print("[" + timestamp + "]" + tag + " " + message)
+        self.write_log("[" + timestamp + "]" + tag + " " + message)
+
+    def write_log(self, message):
+        print(message)
+        self.log_file.write(message + "\n")
 
     def finalize(self):
         if self.midi_device is not None:
             self.midi_device.close()
         pygame.midi.quit()
         pygame.quit()
+        if (self.log_file is not None) and (self.log_file.closed is False):
+            self.log_file.close()
 
 
 class Properties(object):
@@ -395,6 +413,9 @@ class PracticeSuites(object):
 
     def get_by_id(self, id_name):
         return self.suites[id_name]
+
+    def get_list(self):
+        return sorted(list(self.suites.keys()))
 
 
 class PracticeSuite(object):

@@ -16,9 +16,27 @@ This application makes you to be easy to read musical scores rapidly.
 
 ## Preparations
 
+You need following packages on youre computer.
+* XQuartz (https://www.xquartz.org/)
+* vmpk (http://vmpk.sourceforge.net/)
+* libjpeg-libpng (http://ethan.tira-thompson.com/Mac_OS_X_Ports.html)
+
+* sdl_image
+* portmidi
+* mercurial
+
+if you using macports
+  ...
+
+if you using homebrew
+  $ brew install sdl_image
+  $ brew install portmidi
+  $ brew install mercurial
+
 You need following modules on your computer.
 * Python 3
 * Pygame
+  $ pip install hg+https://bitbucket.org/pygame/pygame
 
 ## Attentions
 

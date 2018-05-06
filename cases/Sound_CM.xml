@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cases>
+  <case type="sound" id="Sound_CM_C7">
+    <notes>
+      <note name="C7" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_B6">
+    <notes>
+      <note name="B6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_A6">
+    <notes>
+      <note name="A6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_G6">
+    <notes>
+      <note name="G6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_F6">
+    <notes>
+      <note name="F6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_E6">
+    <notes>
+      <note name="E6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_D6">
+    <notes>
+      <note name="D6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_C6">
+    <notes>
+      <note name="C6" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_B5">
+    <notes>
+      <note name="B5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_A5">
+    <notes>
+      <note name="A5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_G5">
+    <notes>
+      <note name="G5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_F5">
+    <notes>
+      <note name="F5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_E5">
+    <notes>
+      <note name="E5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_D5">
+    <notes>
+      <note name="D5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_C5">
+    <notes>
+      <note name="C5" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_B4">
+    <notes>
+      <note name="B4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_A4">
+    <notes>
+      <note name="A4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_G4">
+    <notes>
+      <note name="G4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_F4">
+    <notes>
+      <note name="F4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_E4">
+    <notes>
+      <note name="E4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_D4">
+    <notes>
+      <note name="D4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_C4">
+    <notes>
+      <note name="C4" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_B3">
+    <notes>
+      <note name="B3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_A3">
+    <notes>
+      <note name="A3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_G3">
+    <notes>
+      <note name="G3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_F3">
+    <notes>
+      <note name="F3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_E3">
+    <notes>
+      <note name="E3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_D3">
+    <notes>
+      <note name="D3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_C3">
+    <notes>
+      <note name="C3" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_B2">
+    <notes>
+      <note name="B2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_A2">
+    <notes>
+      <note name="A2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_G2">
+    <notes>
+      <note name="G2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_F2">
+    <notes>
+      <note name="F2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_E2">
+    <notes>
+      <note name="E2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_D2">
+    <notes>
+      <note name="D2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_C2">
+    <notes>
+      <note name="C2" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_B1">
+    <notes>
+      <note name="B1" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_A1">
+    <notes>
+      <note name="A1" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_G1">
+    <notes>
+      <note name="G1" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_F1">
+    <notes>
+      <note name="F1" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_E1">
+    <notes>
+      <note name="E1" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_D1">
+    <notes>
+      <note name="D1" />
+    </notes>
+  </case>
+  <case type="sound" id="Sound_CM_C1">
+    <notes>
+      <note name="C1" />
+    </notes>
+  </case>
+</cases>

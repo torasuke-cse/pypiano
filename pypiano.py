@@ -286,12 +286,24 @@ class PyPiano(object):
     def draw_case_as_chord(self):
         pass   ##### TODO #####
 
-    def draw_case_as_sound(self):
+    def draw_case_as_sound(self, is_as_answer = None):
         ### 1. Display a speaker image.
         whole_width = int(self.props.get("WindowWidth"))
         whole_height = int(self.props.get("WindowHeight"))
+        if is_as_answer:
+            speaker_image = self.get_image(self.props.get("SpeakerImageAsAnswer"))
+        else:
+            speaker_image = self.get_image(self.props.get("SpeakerImage"))
+        position_x = (whole_width - speaker_image.get_width()) / 2
+        position_y = (whole_height - speaker_image.get_height()) / 2
         self.canvas = pygame.Surface((whole_width, whole_height))
         self.canvas.fill(self.COLOR_WHITE)
+        self.canvas.blit(speaker_image, (position_x, position_y))
+
+
+
+
+
         ### 2. Play the sound according to selected case.
         print("Note on!")
         for note in self.current_case.get_notes():
@@ -363,7 +375,8 @@ class PyPiano(object):
         pass   ##### TODO #####
 
     def draw_answer_as_sound(self):
-        pass   ##### TODO #####
+        is_as_answer = True
+        self.draw_case_as_sound(is_as_answer)
 
     def wait_interval(self):
         pygame.event.pump()

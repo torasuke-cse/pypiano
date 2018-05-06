@@ -38,7 +38,7 @@ if you using homebrew <br />
 
 You need following modules on your computer.
 * Python 3
-* Pygame
+* Pygame <br />
   $ pip install hg+https://bitbucket.org/pygame/pygame
 
 ## Attentions

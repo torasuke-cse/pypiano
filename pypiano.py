@@ -293,16 +293,19 @@ class PyPiano(object):
         self.canvas = pygame.Surface((whole_width, whole_height))
         self.canvas.fill(self.COLOR_WHITE)
         ### 2. Play the sound according to selected case.
-        pass
-
         print("Note on!")
-        self.midi_output_device.note_on(64, 127)
+        for note in self.current_case.get_notes():
+            note_number_string = self.props.get("NoteNumber_" + note.get_name())
+            self.midi_output_device.note_on(int(note_number_string), 127)
+            # TODO output log
 
         time.sleep(1)
 
         print("Note off!")
-        self.midi_output_device.note_off(64, 127)
-        pass
+        for note in self.current_case.get_notes():
+            note_number_string = self.props.get("NoteNumber_" + note.get_name())
+            self.midi_output_device.note_off(int(note_number_string), 127)
+            # TODO output log
 
     def display_canvas_on_screen(self):
         scaled_width = int(self.canvas.get_width() * float(self.props.get("DisplayScale")))

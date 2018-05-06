@@ -18,20 +18,23 @@ This application makes you to be easy to read musical scores rapidly.
 
 You need following packages on youre computer.
 * XQuartz (https://www.xquartz.org/)
-* vmpk (http://vmpk.sourceforge.net/)
 * libjpeg-libpng (http://ethan.tira-thompson.com/Mac_OS_X_Ports.html)
+* MIDI keybord # exxample ... vmpk (http://vmpk.sourceforge.net/)
 
 * sdl_image
 * portmidi
 * mercurial
 
-if you using macports
-  ...
+if you using macports <br />
+  $ sudo port install libsdl_image <br />
+  $ sudo port install libsdl2_image <br />
+  $ sudo port install portmidi <br />
+  $ sudo port install mercurial <br />
 
-if you using homebrew
-  $ brew install sdl_image
-  $ brew install portmidi
-  $ brew install mercurial
+if you using homebrew <br />
+  $ brew install sdl_image <br />
+  $ brew install portmidi <br />
+  $ brew install mercurial <br />
 
 You need following modules on your computer.
 * Python 3

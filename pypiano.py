@@ -293,6 +293,7 @@ class PyPiano(object):
         self.canvas = pygame.Surface((whole_width, whole_height))
         self.canvas.fill(self.COLOR_WHITE)
         ### 2. Play the sound according to selected case.
+        pass
 
         print("Note on!")
         self.midi_output_device.note_on(64, 127)
@@ -500,7 +501,17 @@ class PracticeCases(object):
                 elif type_name == "chord":
                     pass   ##### TODO #####
                 elif type_name == "sound":
-                    pass   ##### TODO #####
+                    id_name = case.get("id")
+                    notes = list()
+                    for note_node in case.findall("./notes/note"):
+                        note_name = note_node.get("name")
+                        note_step = note_node.get("step")
+                        if note_step:
+                            note = Note(note_name, note_step)
+                        else:
+                            note = Note(note_name)
+                        notes.append(note)
+                    self.cases[id_name] = PracticeCaseAsSound(id_name, notes)
                 else:
                     pass   # Unexpected case. Nothing to do....
 
@@ -534,7 +545,7 @@ class PracticeCaseAsScore(PracticeCase):
 class PracticeCaseAsChord(PracticeCase):
 
     def __init__(self, id_name, chord, notes):
-        super.__init__(id_name, notes)
+        super().__init__(id_name, notes)
         self.chord = chord
 
     def get_chord(self):
@@ -544,7 +555,7 @@ class PracticeCaseAsChord(PracticeCase):
 class PracticeCaseAsSound(PracticeCase):
 
     def __init__(self, id_name, notes):
-        super.__init__(id_name, notes)
+        super().__init__(id_name, notes)
 
 
 class Note(object):

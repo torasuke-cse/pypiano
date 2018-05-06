@@ -25,6 +25,7 @@ import re
 import sys
 import xml.etree.ElementTree
 
+import time
 
 class PyPiano(object):
 
@@ -40,6 +41,7 @@ class PyPiano(object):
         self.EXIT_SUCCESS = 0
         self.EXIT_FAILURE = 1
         self.midi_device = None
+        self.midi_output_device = None
         self.canvas = None   # Surface for drawing
         self.screen = None   # Surface for displaying
         self.practice_cases = PracticeCases(self.props.get("DirectoryForCases"))
@@ -83,6 +85,7 @@ class PyPiano(object):
         self.print_device_list(input_devices)
         device_id = int(input("Choose device_id: "))
         self.midi_device = pygame.midi.Input(device_id)
+        self.midi_output_device = pygame.midi.Output(3)
         self.write_info_log("MIDI device connected")
 
     def get_midi_input_devices(self):
@@ -284,7 +287,21 @@ class PyPiano(object):
         pass   ##### TODO #####
 
     def draw_case_as_sound(self):
-        pass   ##### TODO #####
+        ### 1. Display a speaker image.
+        whole_width = int(self.props.get("WindowWidth"))
+        whole_height = int(self.props.get("WindowHeight"))
+        self.canvas = pygame.Surface((whole_width, whole_height))
+        self.canvas.fill(self.COLOR_WHITE)
+        ### 2. Play the sound according to selected case.
+
+        print("Note on!")
+        self.midi_output_device.note_on(64, 127)
+
+        time.sleep(1)
+
+        print("Note off!")
+        self.midi_output_device.note_off(64, 127)
+        pass
 
     def display_canvas_on_screen(self):
         scaled_width = int(self.canvas.get_width() * float(self.props.get("DisplayScale")))

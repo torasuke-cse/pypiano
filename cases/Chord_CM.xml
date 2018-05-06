@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cases>
+  <case type="chord" id="Chord_sample_C">
+    <chord name="C" />
+    <notes>
+      <note name="C" />
+      <note name="E" />
+      <note name="G" />
+    </notes>
+  </case>
+  <case type="chord" id="Chord_sample_Dm">
+    <chord name="Dm" />
+    <notes>
+      <note name="D" />
+      <note name="F" />
+      <note name="A" />
+    </notes>
+  </case>
+  <case type="chord" id="Chord_sample_Em">
+    <chord name="Em" />
+    <notes>
+      <note name="E" />
+      <note name="G" />
+      <note name="B" />
+    </notes>
+  </case>
+
+</cases>

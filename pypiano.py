@@ -283,7 +283,7 @@ class PyPiano(object):
     def get_image(self, filename):
         return pygame.image.load(filename).convert_alpha()
 
-    def draw_case_as_chord(self):
+    def draw_case_as_chord(self, is_as_answer = None):
         pass   ##### TODO #####
 
     def draw_case_as_sound(self, is_as_answer = None):
@@ -372,7 +372,8 @@ class PyPiano(object):
         self.draw_case_as_score(is_as_answer)
 
     def draw_answer_as_chord(self):
-        pass   ##### TODO #####
+        is_as_answer = True
+        self.draw_case_as_chord(is_as_answer)
 
     def draw_answer_as_sound(self):
         is_as_answer = True

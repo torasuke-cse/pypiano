@@ -324,9 +324,9 @@ class PyPiano(object):
         for note in self.current_case.get_notes():
             note_number_string = self.props.get("NoteNumber_" + note.get_name())
             note_number = int(note_number_string)
+            velocity = int(self.props.get("SoundVelocity"))
             self.midi_output_device.note_off(note_number)
-            self.midi_output_device.note_on(note_number, 100, 1)
-            print("Play: " + note_number_string)
+            self.midi_output_device.note_on(note_number, velocity)
 
     def display_canvas_on_screen(self):
         scaled_width = int(self.canvas.get_width() * float(self.props.get("DisplayScale")))

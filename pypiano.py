@@ -39,7 +39,8 @@ class PyPiano(object):
         self.COLOR_TRANSPARENCY = (255, 255, 255, 0)
         self.EXIT_SUCCESS = 0
         self.EXIT_FAILURE = 1
-        self.midi_device = None
+        self.midi_input_device = None
+        self.midi_output_device = None
         self.canvas = None   # Surface for drawing
         self.screen = None   # Surface for displaying
         self.practice_cases = PracticeCases(self.props.get("DirectoryForCases"))
@@ -54,7 +55,8 @@ class PyPiano(object):
         try:
             self.initialize()
             self.write_info_log("PyPiano started.")
-            self.select_device()
+            self.select_input_device()
+            self.select_output_device()
             self.select_suite()
             self.execute_suite()
         except NotFoundMidiDeviceException as exception:
@@ -78,12 +80,12 @@ class PyPiano(object):
         self.screen.fill(self.COLOR_WHITE)
         pygame.display.update()
 
-    def select_device(self):
+    def select_input_device(self):
         input_devices = self.get_midi_input_devices()
         self.print_device_list(input_devices)
         device_id = int(input("Choose device_id: "))
-        self.midi_device = pygame.midi.Input(device_id)
-        self.write_info_log("MIDI device connected")
+        self.midi_input_device = pygame.midi.Input(device_id)
+        self.write_info_log("MIDI input device connected")
 
     def get_midi_input_devices(self):
         number_of_midi_devices = pygame.midi.get_count()
@@ -99,9 +101,30 @@ class PyPiano(object):
             raise NotFoundMidiInputDeviceException
         return input_devices
 
-    def print_device_list(self, input_devices):
+    def select_output_device(self):
+        output_devices = self.get_midi_output_devices()
+        self.print_device_list(output_devices)
+        device_id = int(input("Choose device_id: "))
+        self.midi_output_device = pygame.midi.Output(device_id)
+        self.write_info_log("MIDI output device connected")
+
+    def get_midi_output_devices(self):
+        number_of_midi_devices = pygame.midi.get_count()
+        if number_of_midi_devices <= 0:
+            raise NotFoundMidiDeviceException
+        is_closed_output_device = lambda device: (device[3] == 1 and device[4] == 0)
+        output_devices = list()
+        for device_id in range(number_of_midi_devices):
+            device_info = pygame.midi.get_device_info(device_id)
+            if is_closed_output_device(device_info):
+                output_devices.append((device_id, device_info))
+        if len(output_devices) <= 0:
+            raise NotFoundMidiInputDeviceException
+        return output_devices
+
+    def print_device_list(self, devices):
         print("======= MIDI Devices =======")
-        for device in input_devices:
+        for device in devices:
             device_id = device[0]
             device_name = device[1][1].decode()
             print(" " + str(device_id) + " : " + device_name)
@@ -145,6 +168,7 @@ class PyPiano(object):
             self.draw_case_as_chord()
         elif isinstance(self.current_case, PracticeCaseAsSound):
             self.draw_case_as_sound()
+            self.play_case_as_sound()
         else:
             pass   # Unexpected case. Nothing to do....
         self.display_canvas_on_screen()
@@ -284,7 +308,6 @@ class PyPiano(object):
         pass   ##### TODO #####
 
     def draw_case_as_sound(self, is_as_answer = None):
-        ### 1. Display a speaker image.
         whole_width = int(self.props.get("WindowWidth"))
         whole_height = int(self.props.get("WindowHeight"))
         if is_as_answer:
@@ -297,12 +320,13 @@ class PyPiano(object):
         self.canvas.fill(self.COLOR_WHITE)
         self.canvas.blit(speaker_image, (position_x, position_y))
 
-
-
-
-
-        ### 2. Play the sound according to selected case.
-        pass
+    def play_case_as_sound(self):
+        for note in self.current_case.get_notes():
+            note_number_string = self.props.get("NoteNumber_" + note.get_name())
+            note_number = int(note_number_string)
+            self.midi_output_device.note_off(note_number)
+            self.midi_output_device.note_on(note_number, 100, 1)
+            print("Play: " + note_number_string)
 
     def display_canvas_on_screen(self):
         scaled_width = int(self.canvas.get_width() * float(self.props.get("DisplayScale")))
@@ -318,8 +342,8 @@ class PyPiano(object):
             for event in pygame.event.get():
                 if event.type == QUIT:   # Exit on press Quit button.
                     raise SystemContinuationException
-            if self.midi_device.poll():
-                for event in self.midi_device.read(10):
+            if self.midi_input_device.poll():
+                for event in self.midi_input_device.read(10):
                     self.write_info_log("MIDI event got : " + str(event))
                     midi_event = MidiEvent(event)
                     note_number_string = str(midi_event.get_data1())
@@ -392,8 +416,10 @@ class PyPiano(object):
         self.log_file.write(message + "\n")
 
     def finalize(self):
-        if self.midi_device is not None:
-            self.midi_device.close()
+        if self.midi_input_device is not None:
+            self.midi_input_device.close()
+        if self.midi_output_device is not None:
+            self.midi_output_device.close()
         pygame.midi.quit()
         pygame.quit()
         if (self.log_file is not None) and (self.log_file.closed is False):
@@ -425,7 +451,7 @@ class PracticeSuites(object):
 
     def __init__(self, directory):
         self.suites = dict()
-        for xml_file in org.fukurous.utils.filesystem.filelist_recursive(directory):
+        for xml_file in org.fukurous.utils.filesystem.filelist_with_pattern(directory, "**/*.xml"):
             xml_filename = str(xml_file)
             self.tree = xml.etree.ElementTree.parse(xml_filename)
             for suite_node in self.tree.findall(".//suite"):
@@ -482,7 +508,7 @@ class PracticeCases(object):
 
     def __init__(self, directory):
         self.cases = dict()
-        for xml_file in org.fukurous.utils.filesystem.filelist_recursive(directory):
+        for xml_file in org.fukurous.utils.filesystem.filelist_with_pattern(directory, "**/*.xml"):
             xml_filename = str(xml_file)
             self.tree = xml.etree.ElementTree.parse(xml_filename)
             for case in self.tree.findall(".//case"):
@@ -597,10 +623,20 @@ class MidiEvent(object):
         return self.raw_event[1]
 
     def is_note_on(self):
-        return (self.raw_event != None) and (self.get_status() == 0x90)
+        if self.raw_event == None:
+            return False
+        if (self.get_status() == 0x90) and (self.get_data2() > 0x00):
+            return True
+        return False
 
     def is_note_off(self):
-        return (self.raw_event != None) and (self.get_status() == 0x80)
+        if self.raw_event == None:
+            return False
+        if self.get_status() == 0x80:
+            return True
+        if (self.get_status() == 0x90) and (self.get_data2() == 0x00):
+            return True
+        return False
 
 
 class SystemContinuationException(Exception):

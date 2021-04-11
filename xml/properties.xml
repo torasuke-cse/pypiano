@@ -31,6 +31,7 @@
   <property key="LineImage_Lower_Bottom5th" value="./images/lines_lower_botttom5th.png" />
   <property key="SpeakerImage" value="./images/speaker.png" />
   <property key="SpeakerImageAsAnswer" value="./images/speaker_as_answer.png" />
+  <property key="SoundVelocity" value="100" />
   <property key="KeyImage_AfM" value="./images/key_AfM.png" />
   <property key="KeyImage_AM"  value="./images/key_AM.png" />
   <property key="KeyImage_BfM" value="./images/key_BfM.png" />
